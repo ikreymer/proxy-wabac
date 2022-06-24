@@ -16,14 +16,14 @@ async function init() {
     },
   };
 
-  const scope = "./";
+  const scope = "/";
 
   if (!navigator.serviceWorker) {
     showError("Sorry, Service Workers are not supported in this browser (or mode)");
     return;
   }
 
-  await navigator.serviceWorker.register("./sw.js?root=proxytest&proxy=1", {scope});
+  await navigator.serviceWorker.register("/sw.js?root=proxytest&proxy=1", {scope});
 
   await new Promise((resolve) => {
     if (!navigator.serviceWorker.controller) {
